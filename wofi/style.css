@@ -1,0 +1,39 @@
+/* Global styles */
+* {
+  border-radius: 3px;
+  border: none;
+}
+
+window {
+  font-size: 22px;
+  font-family: "JetBrains Mono";
+  background-color: #2E3440; /* Nord0 */
+  color: #D8DEE9; /* Nord6 */
+}
+
+/* Entry styles */
+#entry {
+  padding: 0.25em;
+}
+
+#entry:selected {
+  background-color: #5E81AC; /* Nord9 */
+  background: linear-gradient(90deg, #5E81AC, #8FBCBB); /* Nord10 */
+}
+
+#text:selected {
+  color: #2E3440; /* Nord0 */
+}
+
+/* Input styles */
+#input {
+  background-color: #3B4252; /* Nord2 */
+  color: #D8DEE9; /* Nord6 */
+  padding: 0.25em;
+}
+
+/* Image styles */
+image {
+  margin-left: 0.25em;
+  margin-right: 0.25em;
+}
