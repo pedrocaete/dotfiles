@@ -35,6 +35,10 @@ window#waybar {
 	background-color: rgba(0,153,153,1);
 }
 
+#workspaces button.visible {
+	background: rgba(255,255,255,0.5);
+}
+
 #workspaces button.focused {
 	background-color: rgba(0,43,51,0.85);
 }
@@ -62,7 +66,7 @@ window#waybar {
     background-color: rgba(0,119,179,0.6);
     border-radius: 100px;
     margin: 5px 5px;
-    padding: 1px 1px 1px 6px;
+    padding: 1px 3px 1px 3px;
 }
 /*-----Indicators----*/
 #idle_inhibitor.activated {

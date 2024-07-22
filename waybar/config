@@ -1,19 +1,23 @@
 {
     "modules-left": ["hyprland/workspaces", "hyprland/mode"],
     "modules-center": ["clock", "idle_inhibitor"],
-    /* "modules-right": ["tray", "custom/scratchpad-indicator", "custom/power"], */
-    "modules-right": [ "custom/scratchpad-indicator","network","clock","tray", "custom/scratchpad-indicator", "pulseaudio", "battery", "custom/power"],
+    "modules-right": ["clock#date","network","tray", "pulseaudio", "backlight", "battery", "custom/power"],
 
-  
     "hyprland/mode": {
-        "format": "<span style=\"italic\">{}</span>"
+        "format": "<span style=\"italic\">{}</span>",
+    },
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "{percent}% {icon}",
+        "states": [0,20,40,60,80],
+        "format-icons": ["", "🌔︎","🌓︎","🌒︎","🌑︎"]
     },
     "network": {
         "format-wifi": "{essid} ({signalStrength}%) ",
         "format-ethernet": "{ifname} ",
         "format-disconnected": "", 
         "max-length": 50,
-        "on-click": "networkmanager"
+        "on-click":"kitty sh -c nmcli"
     },
     "idle_inhibitor": {
         "format": "{icon}",
@@ -21,7 +25,6 @@
             "activated": "",
             "deactivated": ""
         },
-		"on-click": "bash /home/dg/.local/bin/toggleRemote"
     },
     "tray": {
         "icon-size": 15,
@@ -39,12 +42,17 @@
             "critical": 10
         },
         "tooltip": false,
-        "on-click": "2"
     },
     "clock": {
         // "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         // "format-alt": "{:%Y-%m-%d}"
-		"on-click": "gnome-calendar"
+    },
+    "clock#date": {
+        "interval": 20,
+        "format": "{:%e  %b  %Y}",
+		"on-click":"kitty sh -c cal",
+        "tooltip": false
+            //"tooltip-format": "{:%e %B %Y}"
     },
     "pulseaudio": {
         "format": "{volume}% {icon} ",
@@ -68,13 +76,4 @@
 		"format": " ",
 		"on-click": "wlogout"
 	},
-    "custom/scratchpad-indicator": {
-        "format-text": "{}hi",
-        "return-type": "json",
-        "interval": 3,
-        "exec": "~/.local/bin/scratchpad-indicator 2> /dev/null",
-        "exec-if": "exit 0",
-        "on-click": "swaymsg 'scratchpad show'",
-        "on-click-right": "swaymsg 'move scratchpad'"
-    }
 }
