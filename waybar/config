@@ -1,7 +1,7 @@
 {
     "modules-left": ["hyprland/workspaces", "hyprland/mode"],
     "modules-center": ["clock", "idle_inhibitor"],
-    "modules-right": ["clock#date","network","tray", "pulseaudio", "backlight", "battery", "custom/power"],
+    "modules-right": ["custom/spotify","clock#date","network","tray", "pulseaudio", "backlight", "battery", "custom/power"],
 
     "hyprland/mode": {
         "format": "<span style=\"italic\">{}</span>",
@@ -54,10 +54,17 @@
         "tooltip": false
             //"tooltip-format": "{:%e %B %Y}"
     },
+    "custom/spotify": {
+        "interval": 1,
+        "return-type": "json",
+        "exec": "~/.config/waybar/modules/spotify.sh",
+        "exec-if": "pgrep spotify",
+        "escape": true
+    },
     "pulseaudio": {
         "format": "{volume}% {icon} ",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon}     {format_source}",
+        "format-bluetooth-muted": " {icon}     {format_source}",
         "format-muted": "0% {icon} ",
         "format-source": "{volume}% ",
         "format-source-muted": "",
