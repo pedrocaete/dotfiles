@@ -1,6 +1,6 @@
 {
     "modules-left": ["hyprland/workspaces", "hyprland/mode"],
-    "modules-center": ["clock", "idle_inhibitor"],
+    "modules-center": ["clock"],
     "modules-right": ["custom/spotify","clock#date","network","tray", "pulseaudio", "backlight", "battery", "custom/power"],
 
     "hyprland/mode": {
@@ -18,13 +18,6 @@
         "format-disconnected": "", 
         "max-length": 50,
         "on-click":"kitty sh -c nmcli"
-    },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        },
     },
     "tray": {
         "icon-size": 15,
