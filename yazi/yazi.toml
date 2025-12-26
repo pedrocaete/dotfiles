@@ -1,0 +1,14 @@
+# ~/.config/yazi/yazi.toml
+
+[mgr]
+# Ordena por data de modificação
+#sort_by = "mtime"
+
+# Coloca os diretórios (pastas) primeiro na listagem
+sort_dir_first = true
+
+# Opcional: inverte a ordem da ordenação (mais recentes primeiro)
+#sort_reverse = true
+
+# Outras configurações do gerenciador podem estar aqui
+# show_hidden = false
