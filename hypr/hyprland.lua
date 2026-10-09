@@ -183,8 +183,17 @@ hl.bind(mainMod .. " + SHIFT + K", hl.dsp.window.move({ x = 0,   y = -30, relati
 hl.bind(mainMod .. " + SHIFT + J", hl.dsp.window.move({ x = 0,   y = 30,  relative = true }), { repeating = true })
 
 -- Fn bindings.
-hl.bind("XF86AudioRaiseVolume",  hl.dsp.exec_cmd("wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 5%+"), { repeating = true })
-hl.bind("XF86AudioLowerVolume",  hl.dsp.exec_cmd("wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 5%-"), { repeating = true })
+hl.bind(
+    "XF86AudioRaiseVolume",
+    hl.dsp.exec_cmd("~/.config/hypr/Scripts/audio_volume.sh up"),
+    { repeating = true }
+)
+
+hl.bind(
+    "XF86AudioLowerVolume",
+    hl.dsp.exec_cmd("~/.config/hypr/Scripts/audio_volume.sh down"),
+    { repeating = true }
+)
 hl.bind("XF86AudioMute",         hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"))
 hl.bind("XF86AudioPlay",         hl.dsp.exec_cmd("playerctl play-pause"))
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl set 5%-"), { repeating = true })
